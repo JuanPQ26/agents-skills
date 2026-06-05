@@ -53,8 +53,8 @@ npx @juanpq26/skills targets
 | Skill | Descripción |
 |---|---|
 | `fastapi` | Estructura, convenciones y ejemplos para proyectos FastAPI + SQLModel async |
-| `gitea-setup` | Configuración de Gitea self-hosted con Nginx y Certbot |
-| `docker-compose` | Plantillas y estándares para `docker-compose.yml` |
+| `architecture-doc` | Gestiona y actualiza el archivo ARCHITECTURE.md de un proyecto |
+| `requirements-generator` | Genera documentos de requerimientos en formato Markdown por feature |
 
 ## Workflow del equipo
 
