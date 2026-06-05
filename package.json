@@ -1,6 +1,6 @@
 {
   "name": "@juanpq26/skills",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CLI to install Agent Skills into multiple AI agent frameworks",
   "type": "module",
   "bin": {
