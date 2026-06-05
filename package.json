@@ -1,0 +1,31 @@
+{
+  "name": "@juanpq26/skills",
+  "version": "1.0.0",
+  "description": "CLI to install Agent Skills into multiple AI agent frameworks",
+  "type": "module",
+  "bin": {
+    "skills": "./src/cli.js"
+  },
+  "files": [
+    "src/",
+    "skills/",
+    "README.md"
+  ],
+  "scripts": {
+    "start": "node src/cli.js"
+  },
+  "keywords": [
+    "claude",
+    "claude-code",
+    "opencode",
+    "antigravity",
+    "antigravity-cli",
+    "agent-skills",
+    "ai"
+  ],
+  "author": "JuanPQ26",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
