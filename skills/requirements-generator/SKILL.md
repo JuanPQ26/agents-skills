@@ -22,12 +22,12 @@ Este skill convierte la descripción de una característica o funcionalidad en u
 3. **Genera el archivo** siguiendo exactamente la plantilla de `assets/template.md`. Guárdalo como un archivo real (no solo lo muestres en el chat) dentro del proyecto, dando a cada requerimiento su propia carpeta:
 
    ```
-   docs/specs/<nombre-del-requerimiento>/requirements.md
+   docs/specs/<nombre-caracteristica>/requirements.md
    ```
 
-   - `<nombre-del-requerimiento>` es el nombre de la carpeta y coincide con el nombre de la característica en *kebab-case* (minúsculas, sin tildes ni espacios; separa palabras con guiones). Ejemplo: característica "Autenticación de usuarios" → `docs/specs/autenticacion-de-usuarios/requirements.md`.
+   - `<nombre-caracteristica>` es el nombre de la carpeta y coincide con el nombre de la característica en *kebab-case* (minúsculas, sin tildes ni espacios; separa palabras con guiones). Ejemplo: característica "Autenticación de usuarios" → `docs/specs/autenticacion-de-usuarios/requirements.md`.
    - El archivo siempre se llama `requirements.md`. La carpeta por característica deja espacio para añadir después material relacionado (diagramas, mockups, notas) sin mezclarlo con otras características.
-   - Si las carpetas `docs/specs/` o `docs/specs/<nombre-del-requerimiento>/` no existen, créalas antes de escribir el archivo.
+   - Si las carpetas `docs/specs/` o `docs/specs/<nombre-caracteristica>/` no existen, créalas antes de escribir el archivo.
    - Si ya existe un `requirements.md` en esa carpeta, avisa al usuario antes de sobrescribir.
 
 ## Reglas de la plantilla

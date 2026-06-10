@@ -1,6 +1,13 @@
 ---
 name: architecture-doc
-description: Manages a software project's ARCHITECTURE.md file following a standardized template; it creates the file from scratch and also keeps it up to date as the code evolves. Each file documents a SINGLE project/service. Use it whenever the user wants to create, generate, or bootstrap architecture documentation; whenever a decision is made that changes the existing architecture (adding a component or external service, changing the stack, reflecting a new structure, recording a decision) and the ARCHITECTURE.md should be updated accordingly; when they mention "ARCHITECTURE.md", "architecture document", "architecture doc"; or when they want to document the structure, stack, components, data, or integrations of a codebase. Trigger it even if they only say "document/update the architecture" without naming the exact file.
+description: >
+  Gestiona y mantiene actualizado el archivo ARCHITECTURE.md del proyecto (o un archivo por
+  servicio en monorrepos) usando una plantilla estándar. Se activa al crear la documentación
+  desde cero, al detectar cambios estructurales en el código (nuevas dependencias o módulos),
+  cuando se menciona "ARCHITECTURE.md" o "documentación de arquitectura", o cuando se solicita
+  consolidar o reflejar decisiones de diseño arquitectónico local desde un archivo design.md de una
+  característica. Se activa incluso ante frases genéricas como "actualizar la arquitectura" o
+  "documentar la estructura".
 ---
 
 # ARCHITECTURE.md Manager
@@ -121,6 +128,22 @@ rewrite.
 6. **Update `Date of Last Update`** (section 1) to today's date.
 7. **Do not delete silently.** If you are going to remove or replace existing content, confirm it
    with the user.
+
+## Consolidación de Diseños Locales (design.md)
+
+Cuando una característica ha sido diseñada y sus decisiones de diseño han sido registradas en un archivo `docs/specs/<nombre-caracteristica>/design.md`, o bien la característica ya ha sido implementada, estas decisiones técnicas locales deben ser integradas en la arquitectura global del proyecto (`ARCHITECTURE.md`) para asegurar la integridad de la documentación técnica.
+
+1. **Mapeo Estructurado de Cambios**:
+   - **Tecnologías y Librerías**: Si el `design.md` en la tabla de **Librerías y Dependencias** recomienda librerías nuevas que no estaban en el stack global, agrégalas a la **Sección 1 (Project Identification - Stack)** y al listado de tecnologías de la **Sección 4 (Core Components)** en `ARCHITECTURE.md`.
+   - **Estructura y Módulos**: Si la sección **Alcance y Responsabilidades por Capa** introduce nuevas clases, carpetas o subcarpetas relevantes, actualiza el árbol de directorios de la **Sección 2 (Project Structure)** y las ubicaciones en la **Sección 4 (Core Components)**.
+   - **Diagrama de Mermaid**: Si la tabla de **Servicios Externos e Integraciones** introduce servicios externos de terceros o integraciones con servicios hermanos del sistema, actualiza el diagrama de Mermaid de la **Sección 3 (High-Level System Diagram)** agregando los nodos necesarios y dibujando sus aristas de flujo.
+   - **Integraciones de APIs**: Agrega los servicios de la tabla a la **Sección 6 (External Integrations / APIs)** detallando su rol e integraciones técnicas.
+   - **Persistencia**: Si hay nuevos almacenamientos conceptuales, agrégalos a la **Sección 5 (Data Stores)**.
+   - **Roadmap / Consideraciones Futuras**: Si las **Restricciones y Advertencias** o los **ADRs** de diseño imponen deudas técnicas heredadas o consideraciones a futuro relevantes, añádelas a la **Sección 10 (Future Considerations / Roadmap)**.
+
+2. **Aplicación Quirúrgica**: Modifica única y exclusivamente las secciones afectadas del `ARCHITECTURE.md` global para preservar la documentación ya consolidada de otras características.
+
+3. **Registro de Cambios y Versión**: Actualiza siempre el campo `Date of Last Update` en la Sección 1 con la fecha de la consolidación para certificar que el documento global de arquitectura está al día con la última feature diseñada e implementada.
 
 ## Closing (both modes)
 
